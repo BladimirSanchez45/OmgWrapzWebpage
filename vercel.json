@@ -1,16 +1,16 @@
 {
     "version": 2,
+    "routes": [
+      { "handle": "filesystem" },
+      { "src": "/.*", "dest": "/index.html" }
+    ],
     "builds": [
       {
         "src": "package.json",
-        "use": "@vercel/node",
-        "config": { "devCommand": "vite" }
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/"
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "dist"
+        }
       }
     ]
   }
