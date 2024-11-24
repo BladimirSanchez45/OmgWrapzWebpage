@@ -1,0 +1,46 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  background-color: #0a0a0a;
+}
+
+.page-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Secciones */
+section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.home-section {
+  background-color: black; 
+}
+
+.content-section {
+  background-color: white;
+}
+
+.contact-container {
+  margin: 0;
+  padding: 0;
+}
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}

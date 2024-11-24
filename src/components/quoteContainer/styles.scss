@@ -1,0 +1,235 @@
+.quote-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0a0a0a;
+    overflow: hidden;
+    padding: 4rem 0;
+
+    .gradient-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(45deg, #000000 0%, rgba(0,0,0,0.8) 100%);
+        z-index: 1;
+    }
+
+    .content-wrapper {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    .quote-header {
+        text-align: center;
+        margin-bottom: 4rem;
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #6DEB16;
+            margin-bottom: 1rem;
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #ffffff;
+            opacity: 0.9;
+        }
+    }
+
+    .form-wrapper {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 1rem;
+        padding: 3rem;
+        box-shadow: 0 8px 32px rgba(109, 235, 22, 0.1);
+        border: 1px solid rgba(109, 235, 22, 0.1);
+
+        .quote-form {
+            .form-columns {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                margin-bottom: 2rem;
+
+                .form-column {
+                    h3 {
+                        color: #6DEB16;
+                        font-size: 1.2rem;
+                        margin-bottom: 1.5rem;
+                    }
+                }
+            }
+
+            .input-group {
+                margin-bottom: 1.5rem;
+
+                input {
+                    width: 100%;
+                    padding: 1rem;
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(109, 235, 22, 0.2);
+                    border-radius: 0.5rem;
+                    color: white;
+                    font-size: 1rem;
+                    transition: all 0.3s ease;
+
+                    &:focus {
+                        outline: none;
+                        border-color: #6DEB16;
+                        box-shadow: 0 0 0 2px rgba(109, 235, 22, 0.2);
+                    }
+
+                    &::placeholder {
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+                }
+            }
+
+            .wrap-selection {
+                margin-bottom: 2rem;
+
+                h3 {
+                    color: #6DEB16;
+                    font-size: 1.2rem;
+                    margin-bottom: 1rem;
+                }
+
+                select {
+                    width: 100%;
+                    padding: 1rem;
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(109, 235, 22, 0.2);
+                    border-radius: 0.5rem;
+                    color: white;
+                    font-size: 1rem;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+                    &:focus {
+                        outline: none;
+                        border-color: #6DEB16;
+                    }
+
+                    option {
+                        background: #0a0a0a;
+                        color: white;
+                    }
+                }
+            }
+
+            .message-group {
+                margin-bottom: 2rem;
+
+                h3 {
+                    color: #6DEB16;
+                    font-size: 1.2rem;
+                    margin-bottom: 1rem;
+                }
+
+                textarea {
+                    width: 100%;
+                    min-height: 150px;
+                    padding: 1rem;
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(109, 235, 22, 0.2);
+                    border-radius: 0.5rem;
+                    color: white;
+                    font-size: 1rem;
+                    resize: vertical;
+                    transition: all 0.3s ease;
+
+                    &:focus {
+                        outline: none;
+                        border-color: #6DEB16;
+                        box-shadow: 0 0 0 2px rgba(109, 235, 22, 0.2);
+                    }
+
+                    &::placeholder {
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+                }
+            }
+
+            .submit-button {
+                width: 100%;
+                padding: 1.2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.8rem;
+                background: linear-gradient(135deg, #6DEB16 0%, #4CAF50 100%);
+                color: black;
+                border: none;
+                border-radius: 0.5rem;
+                font-size: 1.1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                .icon {
+                    width: 20px;
+                    height: 20px;
+
+                    &.spinning {
+                        animation: spin 1s linear infinite;
+                    }
+                }
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 25px rgba(109, 235, 22, 0.3);
+                }
+
+                &:active {
+                    transform: translateY(0);
+                }
+
+                &.submitting {
+                    background: #4CAF50;
+                    pointer-events: none;
+                }
+
+                &.success {
+                    background: #6DEB16;
+                }
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .quote-container {
+        padding: 2rem 0;
+
+        .form-wrapper {
+            padding: 1.5rem;
+
+            .quote-form {
+                .form-columns {
+                    grid-template-columns: 1fr;
+                    gap: 1rem;
+                }
+            }
+        }
+
+        .quote-header {
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    }
+}
